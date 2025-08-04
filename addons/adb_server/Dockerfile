@@ -24,7 +24,13 @@ RUN case "$TARGETARCH" in \
         unzip -q /tmp/platform-tools.zip -d /opt && \
         rm /tmp/platform-tools.zip \
         ;; \
-    "arm64" | "arm" | "386") \
+    "arm64" | "aarch64") \
+        echo "Fetching latest aarch64 platform-tools from GitHub" && \
+        wget -q https://github.com/AndroidIDEOfficial/platform-tools/releases/download/v34.0.4/platform-tools-34.0.4-aarch64.tar.xz -O /tmp/platform-tools.tar.xz && \
+        tar -xf /tmp/platform-tools.tar.xz -C /opt && \
+        rm /tmp/platform-tools.tar.xz \
+        ;; \
+    "arm" | "386") \
         echo "Fetching platform-tools for $TARGETARCH from apt" && \
         apt-get update && \
         apt-get install -y --no-install-recommends android-sdk-platform-tools && \
