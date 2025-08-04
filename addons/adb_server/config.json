@@ -1,6 +1,6 @@
 {
   "name": "ADB Server",
-  "version": "3.0.0",
+  "version": "1.0.0",
   "slug": "adb_server",
   "description": "A Home Assistant add-on for ADB Server with restricted shell access.",
   "arch": [
@@ -34,5 +34,5 @@
       "str"
     ]
   },
-  "image": "docker.io/amateurgod/adb_server"
+  "image": "docker.io/skysbird/adb_server"
 }
